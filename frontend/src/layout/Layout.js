@@ -4,7 +4,7 @@ import { Layout } from 'react-admin';
 import { theme } from './Theme';
 
 const layout = (props) => {
-  return <Layout {...props} appBar={AppBar} theme={theme}/>;
+  return <Layout {...props} appBar={AppBar} theme={theme} />;
 };
 
 export default layout;
