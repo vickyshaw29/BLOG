@@ -13,6 +13,7 @@ The BLOG is made using React-admin in the frontend and Nestjs in the backend(Typ
 
 Clone the project
 
+Go to the root directory
 ```bash
   npm install
 ```
