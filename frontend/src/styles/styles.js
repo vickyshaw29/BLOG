@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '0.5em',
   },
   titleTxt: {
-    fontWeight:'bold !important'
+    fontWeight: 'bold !important',
   },
   actionSpacer: {
     display: 'flex',
@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
   card: {
     borderRadius: 50,
     '&:hover': {
-      //   opacity: 0.5,
+      backgrouncColor: '#119d96',
+      opacity: 0.7,
     },
   },
   //   create

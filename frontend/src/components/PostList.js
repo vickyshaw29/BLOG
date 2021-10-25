@@ -23,7 +23,7 @@ const CategoryGrid = (props) => {
   return ids ? (
     <Grid container spacing={2} className={classes.root}>
       {ids.map((id) => (
-        <Grid key={id} xs={12} sm={6} md={4} lg={3} xl={2} item>
+        <Grid key={id} xs={12} sm={6} md={4} lg={3} xl={2} item >
           <Card elevation={5} className={classes.card}>
             <CardMedia
               image={`https://source.unsplash.com/random`}
