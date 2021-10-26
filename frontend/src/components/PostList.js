@@ -1,14 +1,8 @@
-import {
-  List,
-  useListContext,
-  EditButton,
-  DeleteButton,
-} from 'react-admin';
+import { List, useListContext, EditButton, DeleteButton } from 'react-admin';
 
 import {
   Card,
   Grid,
-  CardMedia,
   CardContent,
   Typography,
   CardActions,
@@ -23,44 +17,69 @@ const CategoryGrid = (props) => {
   return ids ? (
     <Grid container spacing={2} className={classes.root}>
       {ids.map((id) => (
-        <Grid key={id} xs={12} sm={6} md={4} lg={3} xl={2} item >
-          <Card elevation={5} className={classes.card}>
-            <CardMedia
-              image={`https://source.unsplash.com/random`}
-              className={classes.media}
-            />
-            <CardContent className={classes.title}>
-              <Typography
-                component="h2"
-                align="center"
-                className={classes.titleTxt}
+        <Grid key={id} xs={12} sm={6} md={4} lg={3} xl={2} item>
+          <Card
+            elevation={5}
+            style={{ height: '100%' }}
+            className={classes.cardContainer}
+          >
+            <Card
+              className={classes.card}
+              sx={{ minWidth: 275 }}
+              style={{ height: '100%' }}
+            >
+              <Grid
+                container
+                justifyContent="center"
+                alignItems="center"
+                className={classes.cardInner}
               >
-                {inflection.humanize(
-                  data[id].title.length > 30
-                    ? `${data[id].title.slice(0, 28)}`
-                    : data[id].title
-                )}
-              </Typography>
-              <Typography variant="body2" component="h2" align="center">
-                {inflection.humanize(
-                  data[id].body.length > 30
-                    ? `${data[id].body.slice(0, 30)}..`
-                    : data[id].body
-                )}
-              </Typography>
-            </CardContent>
-            <CardActions classes={{ spacing: classes.actionSpacer }}>
-              <EditButton
-                basePath="/posts"
-                record={data[id]}
-                variant="outlined"
-              />
-              <DeleteButton
-                basePath="/posts"
-                record={data[id]}
-                variant="outlined"
-              />
-            </CardActions>
+                <Grid item>
+                  <CardContent className={classes.title}>
+                    <Typography
+                      component="h2"
+                      align="center"
+                      className={classes.titleTxt}
+                      style={{ color: '#fff' }}
+                    >
+                      {inflection.humanize(
+                        data[id].title.length > 30
+                          ? `${data[id].title.slice(0, 28)}`
+                          : data[id].title
+                      )}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      component="h2"
+                      align="center"
+                      style={{ color: '#fff' }}
+                    >
+                      {inflection.humanize(
+                        data[id].body.length > 60
+                          ? `${data[id].body.slice(0, 60)}..`
+                          : data[id].body
+                      )}
+                    </Typography>
+                  </CardContent>
+                </Grid>
+                <Grid item>
+                  <CardActions classes={{ spacing: classes.actionSpacer }}>
+                    <EditButton
+                      basePath="/posts"
+                      record={data[id]}
+                      variant="outlined"
+                      className={classes.saveButton}
+                    />
+                    <DeleteButton
+                      basePath="/posts"
+                      record={data[id]}
+                      variant="outlined"
+                      className={classes.deleteButton}
+                    />
+                  </CardActions>
+                </Grid>
+              </Grid>
+            </Card>
           </Card>
         </Grid>
       ))}
