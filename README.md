@@ -1,7 +1,7 @@
 # BLOG
 
 The BLOG is made using React-admin in the frontend and Nestjs in the backend(Typescript) along with Mysql database .
-You can create a Post , view it (click on edit and you will get show button in right corner) ,updated it and delete it
+You can create a Post , view it (click on edit and you will get show button in right corner) ,update it and delete it
 
 ## Features
 
